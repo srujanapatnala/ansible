@@ -1,0 +1,14 @@
+- name: print variables
+  hosts: web
+  vars: 
+   COURSE: "DevOps with aws"
+   DURATION: "140 HRS"
+   TRAINER: "sivakumar readdy"
+  tasks: 
+   - name: print the variable
+     anisble.builtin.debug: 
+      msg: "Course is: {{ COURSE }} , Trainer is: {{ TRAINER }}"
+     
+
+    
+
