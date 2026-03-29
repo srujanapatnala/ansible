@@ -7,3 +7,13 @@
     - name: print facts
       ansible.builtin.debug:
         msg: "{{ansible_facts}}"
+
+    - name: check redhat or not
+  ansible.builtin.debug:
+    msg: "Yes, package manager is RedHat"
+  when: ansible_os_family == "RedHat"  
+
+- name: check redhat or not
+  ansible.builtin.debug:
+    msg: "Yes, package manager is RedHat"
+  when: ansible_os_family == "RedHat" 
