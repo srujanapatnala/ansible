@@ -3,5 +3,5 @@
   connection: local
   tasks:
   - name: print variables from args
-    ansible.buliltin.debug:
+    ansible.builtin.debug:
       msg: "Hi {{ NAME }}, Good Morning"
