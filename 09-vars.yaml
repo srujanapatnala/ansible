@@ -2,6 +2,6 @@
   hosts: local 
   connection: local
   tasks:
-    - name: print variables from args
-      ansible.buliltin.debug:
-        msg: "Hi {{ NAME }}, Good Morning"
+  - name: print variables from args
+    ansible.buliltin.debug:
+      msg: "Hi {{ NAME }}, Good Morning"
