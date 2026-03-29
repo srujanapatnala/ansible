@@ -1,23 +1,26 @@
+
 - name: demo on data types
-  hosts: local
+  hosts: localhost
   connection: local
+
   vars:
     PROGRAM: "Devops with AWS"
     DURATION: "140 HRS"
-    IS_LIVE: true 
-    DETAILS:  "Sivakumar Reddy"
+    IS_LIVE: true
+    DETAILS: "Sivakumar Reddy"
     MONTHS: 4
     TRAINER: "Sivakumar Reddy"
-    TOPICES:
-     - Linux
-     - Shell
-     - Ansible
+    TOPICS:
+      - Linux
+      - Shell
+      - Ansible
+
   tasks:
     - name: print variables
       ansible.builtin.debug:
-        msg:
-          Program {{ PROGRAM }}
-          Duration {{ DURATION }}
-          Is_Live {{ IS_LIVE }}
-          Details {{ Details }}
-          Topices {{ TOPICES }}
+        msg: |
+          Program: {{ PROGRAM }}
+          Duration: {{ DURATION }}
+          Is_Live: {{ IS_LIVE }}
+          Details: {{ DETAILS }}
+          Topics: {{ TOPICS }}
