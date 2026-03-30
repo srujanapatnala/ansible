@@ -1,0 +1,22 @@
+- name: ansible command vs shell module
+  hosts: local
+  connection: local
+  gather_facts: yes
+
+  tasks:
+
+    - name: command module test (using shell for pipe)
+      ansible.builtin.shell: cat /etc/passwd | grep root
+      register: users_output
+
+    - name: print users output
+      ansible.builtin.debug:
+        msg: "{{ users_output.stdout }}"
+
+    - name: shell module test (redirect output to file)
+      ansible.builtin.shell: ls -ltr > files.txt
+      register: files_output
+
+    - name: print files output
+      ansible.builtin.debug:
+        msg: "{{ files_output.stdout }}"
