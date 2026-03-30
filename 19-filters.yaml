@@ -10,20 +10,13 @@
       project: roboshop
       component: catalogue
 
-    tagsMap: [
-      { 
-      - "key": "name",
-        "value": "ansible"
-      },
-      { 
-        "key": "project",
-        "value": "roboshop"
-      },
-      {
-        "key": "component",
-        "value": "catalogue"   
-      }
-     ]
+    tagsMap:
+      - key: name
+        value: ansible
+      - key: project
+        value: roboshop
+      - key: component
+        value: catalogue
   
   tasks:
     - name: greeting
