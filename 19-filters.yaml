@@ -4,20 +4,40 @@
 
   vars:
     topics: "linux, shell, ansible, terraform"
-    my_tags:
+
+    tagsList:
       name: ansible
       project: roboshop
       component: catalogue
 
+    tagsMap: [
+      { 
+      - "key": "name",
+        "value": "ansible"
+      },
+      { 
+        "key": "project",
+        "value": "roboshop"
+      },
+      {
+        "key": "component",
+        "value": "catalogue"   
+      }
+     ]
+  
   tasks:
-    - name: greeting 
+    - name: greeting
       ansible.builtin.debug:
-        msg: "Hi srujana, {{ GREETING | default('Good Morning') }}"
+        msg: "Hi Sivakumar, {{ GREETING | default('Good Morning') }}"
 
     - name: convert string to list
       ansible.builtin.debug:
         msg: "{{ topics | split(', ') }}"
-    
-    - name: convert map to list 
+
+    - name: convert map to list
       ansible.builtin.debug:
-        msg: "{{ my_tags | dict2items }}"
+        msg: "{{ tagsList | dict2items }}"
+
+    - name: convert list to map
+      ansible.builtin.debug:
+        msg: "{{ tagsMap | items2dict }}"
