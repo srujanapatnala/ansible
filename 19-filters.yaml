@@ -4,6 +4,10 @@
 
   vars:
     topics: "linux, shell, ansible, terraform"
+  tags:
+    name: ansible
+    project: roboshop
+    component: catalogue
 
   tasks:
     - name: greeting 
@@ -13,3 +17,7 @@
     - name: convert string to list
       ansible.builtin.debug:
         msg: "{{ topics | split (', ') }}"
+    
+    - name: convert map to list 
+      ansible.builtin.debug:
+        msg: "{{ tags | dict2items }}"     
