@@ -9,4 +9,8 @@
 
     - name: print the user_output
       ansible.builtin.debug:
-        msg: "{{ user_output }}"   
+        msg: "{{ user_output }}" 
+
+    - name: create user
+      anisble.builtin.command: useradd roboshop
+      when: user_ouput.rc !=0       
